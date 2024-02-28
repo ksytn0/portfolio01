@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./library/jquery-3.7.1.js"></script>
+
+    <style>
+                html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn,em, img, ins, kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary,time, mark, audio, video {
+            margin:0;
+            padding:0;
+            border:0;
+            outline:0;
+            font-size:100%;
+            vertical-align:baseline;
+            background:transparent;
+        }
+        body {line-height:1;}
+        article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display:block;}
+        ol, ul, li{list-style:none;}
+        blockquote, q {quotes:none;}
+        blockquote:before, blockquote:after,q:before, q:after {content:''; content:none;}
+        a {
+            margin:0;
+            padding:0;
+            font-size:100%;
+            vertical-align:baseline;
+            background:transparent;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap');
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 300, 400, 500, 600, 700, 800;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'HSSaemaul-Regular';
+            src: url('../font/HSSaemaul-Regular.ttf');
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap');
+        /**************************************************************************************************/
+        body{background:#ffb2b2;}
+        .pg_project h2{display:none;}
+        .webRedesign{
+            width:1000px; height:650px;
+            margin:0px auto;
+            border:1px solid #333;
+            border-radius:50px;
+            background:rgba(255,255,255,.7);
+            /* position:relative; */
+        }
+        /*slider*/
+        .slider{
+            position:relative;
+            overflow: hidden;
+        }
+        .slider h3{right:0px;
+            font-family: "Inter", sans-serif;
+            font-size:30px;
+            font-weight:900;
+            text-transform:uppercase;
+            -webkit-text-stroke:1px #4E4FEB;
+            white-space: nowrap;
+            color:#fff;
+        }
+        .slider .pagination{
+            position:absolute; top:0px;
+            display:flex;
+            /* text-align: center; */
+        }
+        .slider .pagination .dot {
+        display: inline-block;
+        width: 15px; height: 15px; border-radius: 50%;
+        background-color: #4E4FEB;
+        margin-left:10px;
+        cursor: pointer;
+        }
+        .slider .prev{position:absolute; top:50%;}
+        .slider .back{left:10px;}
+        .slider .front{right:-100px;}
+
+        /*slides*/
+        .slides {
+        display: flex;
+        /* transition: transform 0.5s ease; */
+        }
+
+        /*slide*/
+        .slide{
+            flex: 0 0 100%;
+            width: 100%;
+        }
+        .slide h4{
+            font-family: "Inter", sans-serif;
+            font-weight:900;
+            font-size:30px;
+            color:#4E4FEB;
+        }
+        .slide img{width:516px;}
+        /*사이트 제작기간 및 범위*/
+        .slide .durationPage{
+            font-family:"Noto Sans KR", sans-serif;
+            font-size:20px;
+            line-height:24px;
+        }
+        .slide .durationPage li{display:flex;}
+        .slide .durationPage li p:first-child{width:100px;}
+        /*사이트설명*/
+        .slide .webInformation{
+            width:530px;
+            font-family:"Noto Sans KR", sans-serif;
+            font-size:20px;
+        }
+        /*버튼서식*/
+        .slide .buttonGoup{
+            display:flex; justify-content:space-between;
+            font-family:"Noto Sans KR", sans-serif;
+            font-size:20px;
+            width:560px;
+        }
+        .slide .buttonBefore a{
+            display:block;
+            padding:16px 24px;
+            border:1px solid #4E4FEB;
+            border-radius:30px;
+            text-decoration:none;
+            color:#4E4FEB;
+            transition:0.5s;
+        }
+        .slide .buttonBefore a:hover{
+            color:#fff;
+            background:#4E4FEB;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <section class="pg_project">
+        <div class="pg tpg"><!--타겟페이지(스크롤식 가로이동)-->
+            <h2>project</h2>
+            <div class="slidePg"><!--옆으로 흘러갈 박스-->
+                <div class="scroll_bg">
+                    <ul>
+                        <li class="webRedesign">
+                            <div class="slider" id="web_slide">
+                                <h3>web redesign</h3>
+                                <div class="slides">
+                                    <!-- Slides -->
+                                    <div class="slide web1">
+                                        <h4>원오세븐</h4>
+                                        <img src="./images/Mockup.png" alt="">
+                                        <ul class="durationPage">
+                                            <li>
+                                                <p>제작기간</p>
+                                                <p>10일</p>
+                                            </li>
+                                            <li>
+                                                <p>제작범위</p>
+                                                <p>메인페이지</p>
+                                            </li>
+                                        </ul>
+                                        <div class="webInformation">
+                                            <p>원오세븐 공식 홈페이지를 반응형 페이지로 코딩하였습니다. 잘 알려지지 못했던 원오세븐 브랜드에 대하여 잘 알 수 있게끔 내비게이션과 메인페이지를 구성하였습니다.
+                                            </p><br>
+                                            <p>#반응형 #html #css #jquery</p>
+                                        </div>
+                                        <div class="buttonGoup">
+                                            <div class="buttonBefore"><a href="#" title="프로토타입">프로토타입</a></div>
+                                            <div class="buttonBefore"><a href="#" title="기획">기획</a></div>
+                                            <div class="buttonBefore"><a href="#" title="사이트보기">사이트보기</a></div>
+                                            <div class="buttonBefore"><a href="#" title="기존페이지">기존페이지</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="slide web2">
+                                        <h4>포인핸드</h4>
+                                        <img src="./images/Mockup.png" alt="">
+                                        <ul class="durationPage">
+                                            <li>
+                                                <p>제작기간</p>
+                                                <p>10일</p>
+                                            </li>
+                                            <li>
+                                                <p>제작범위</p>
+                                                <p>메인페이지</p>
+                                            </li>
+                                        </ul>
+                                        <div class="webInformation">
+                                            <p>원오세븐 공식 홈페이지를 반응형 페이지로 코딩하였습니다. 잘 알려지지 못했던 원오세븐 브랜드에 대하여 잘 알 수 있게끔 내비게이션과 메인페이지를 구성하였습니다.
+                                            </p><br>
+                                            <p>#반응형 #html #css #jquery</p>
+                                        </div>
+                                        <div class="buttonGoup">
+                                            <div class="buttonBefore"><a href="#" title="프로토타입">프로토타입</a></div>
+                                            <div class="buttonBefore"><a href="#" title="기획">기획</a></div>
+                                            <div class="buttonBefore"><a href="#" title="사이트보기">사이트보기</a></div>
+                                            <div class="buttonBefore"><a href="#" title="기존페이지">기존페이지</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="slide web3">
+                                        <h4>한강술래</h4>
+                                        <img src="./images/Mockup.png" alt="">
+                                        <ul class="durationPage">
+                                            <li>
+                                                <p>제작기간</p>
+                                                <p>10일</p>
+                                            </li>
+                                            <li>
+                                                <p>제작범위</p>
+                                                <p>메인페이지</p>
+                                            </li>
+                                        </ul>
+                                        <div class="webInformation">
+                                            <p>원오세븐 공식 홈페이지를 반응형 페이지로 코딩하였습니다. 잘 알려지지 못했던 원오세븐 브랜드에 대하여 잘 알 수 있게끔 내비게이션과 메인페이지를 구성하였습니다.
+                                            </p><br>
+                                            <p>#반응형 #html #css #jquery</p>
+                                        </div>
+                                        <div class="buttonGoup">
+                                            <div class="buttonBefore"><a href="#" title="프로토타입">프로토타입</a></div>
+                                            <div class="buttonBefore"><a href="#" title="기획">기획</a></div>
+                                            <div class="buttonBefore"><a href="#" title="사이트보기">사이트보기</a></div>
+                                            <div class="buttonBefore"><a href="#" title="기존페이지">기존페이지</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="prev back"><img src="./images/btn_left.png" alt="이전페이지"></button>
+                                <div class="prev front"><img src="./images/btn_right.png" alt="다음페이지"></button>
+                                <div class="pagination">
+                                    <button class="dot"></button>
+                                    <button class="dot"></button>
+                                    <button class="dot"></button>
+                                </div>
+                            </div><!-- slide end -->
+                        </li>
+                        <!-- <li class="cloneCoding">
+                            <div class="swiper" id="web_slide">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide web1">
+                                    </div>
+                                    <div class="swiper-slide web2">
+                                    </div>
+                                    <div class="swiper-slide web3">
+                                    </div>
+                                </div>
+        
+                                <div class="swiper-pagination"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <script>
+        $(document).ready(function() {
+            var slideIndex = 0;
+            var slides = $(".slide");
+            var dots = $(".dot");
+            
+            function showSlide(n) {
+                if (n >= slides.length) {
+                slideIndex = 0;
+                } else if (n < 0) {
+                slideIndex = slides.length - 1;
+                } else {
+                slideIndex = n;
+                }
+                slides.css("transform", "translateX(" + (-slideIndex * 100) + "%)");
+                dots.removeClass("active");
+                dots.eq(slideIndex).addClass("active");
+            }
+            
+            function plusSlides(n) {
+                showSlide(slideIndex + n);
+            }
+            function currentSlide(n) {
+                showSlide(n);
+            }
+            
+            $(".prev").click(function() {
+                plusSlides(-1);
+            });
+            $(".next").click(function() {
+                plusSlides(1);
+            });
+            $(".dot").click(function() {
+                var index = $(this).index();
+                currentSlide(index);
+            });
+            showSlide(slideIndex);
+        });
+    </script>
+</body>
+</html>

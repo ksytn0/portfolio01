@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="웹퍼블리셔, 웹디자이너, 포트폴리오, 박소연">
+    <meta name="description" content="신입 웹퍼블리셔 박소연의 2023 포트폴리오입니다.">
+    <title>박소연 portfolio 2023</title>
+    <!--favicon -->
+    <link rel="shortcut icon" href="./images/idea.png" type="image/x-icon">
+    <link rel="icon" href="./images/idea.png" type="image/x-icon"> 
+    <!-- style -->
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/portfolio.css">
+    <link rel="stylesheet" href="./style/responsive.css">
+    <!-- slide -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <style>
+        html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn,em, img, ins, kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary,time, mark, audio, video {
+            margin:0;
+            padding:0;
+            border:0;
+            outline:0;
+            font-size:100%;
+            vertical-align:baseline;
+            background:transparent;
+        }
+        body {line-height:1;}
+        article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display:block;}
+        ol, ul, li{list-style:none;}
+        blockquote, q {quotes:none;}
+        blockquote:before, blockquote:after,q:before, q:after {content:''; content:none;}
+        a {
+            margin:0;
+            padding:0;
+            font-size:100%;
+            vertical-align:baseline;
+            background:transparent;
+        }
+        /**************************************************************************************************/
+        body{background:#ffb2b2;}
+        .pg_project h2{display:none;}
+        .webRedesign{
+            width:1000px; height:650px;
+            margin:0px auto;
+            border:1px solid #333;
+            border-radius:50px;
+            background:rgba(255,255,255,.7);
+        }
+
+        #web_slide .swiper-button-prev {background:url("./images/btn_left.png") no-repeat;}
+        #web_slide .swiper-button-next {background:url("./images/btn_right.png") no-repeat;}
+    </style>
+</head>
+<body>
+    <main>
+        <section class="pg_project">
+            <div class="pg tpg"><!--타겟페이지(스크롤식 가로이동)-->
+                <h2>project</h2>
+                <div class="slidePg"><!--옆으로 흘러갈 박스-->
+                    <div class="scroll_bg">
+                        <ul>
+                            <li class="webRedesign">
+                                <div class="swiper" id="web_slide">
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+                                        <div class="swiper-slide web1">
+                                        </div><!-- slide 1 end -->
+            
+                                        <div class="swiper-slide web2">
+                                        </div><!-- slide 2 end -->
+            
+                                        <div class="swiper-slide web3">
+                                        </div><!-- slide 3 end -->
+                                    </div>
+            
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div><!-- slide end -->
+                            </li>
+                            <!-- <li class="cloneCoding">
+                                <div class="swiper" id="web_slide">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide web1">
+                                        </div>
+                                        <div class="swiper-slide web2">
+                                        </div>
+                                        <div class="swiper-slide web3">
+                                        </div>
+                                    </div>
+            
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        // 슬라이드
+        const web_slide = new Swiper('#web_slide', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            // If we need pagination
+            pagination: {
+                el: '#web_slide .swiper-pagination',
+                clickable: true,
+            },
+            // Navigation arrows
+            navigation: {
+                nextEl: '#web_slide .swiper-button-next',
+                prevEl: '#web_slide .swiper-button-prev',
+            },
+        });
+    </script>>
+</body>
+</html>

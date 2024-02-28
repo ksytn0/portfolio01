@@ -372,16 +372,16 @@ section{position:relative; background:#F8F8F8;}
     width:100%;
 }
 //실제로 가로이동할 ul박스
-.slidePg > .scroll_bg > ul{
+.slidePg ul{
     position:relative; left:0px; top:55vh;
     transform: translateY(-50%);
     display:flex;
-    width:calc(100vw + 3160px);
+    width:calc(100vw + 3160px); 
     background:url("../images/bg_projectGuitar.png") no-repeat !important;
-    transition:0.8s ease-out;
     // margin:0px; padding:0px;
     // list-style:none;
     // background-position: center 100px;
+    transition:0.8s ease-out;
     // z-index: 9999;
 }
 // .slidePg ul > li{display: flex;}
@@ -419,6 +419,7 @@ section{position:relative; background:#F8F8F8;}
     cursor: pointer;
 }
 
+
 .slider .slides{
     position:absolute; top:60px; left:70px;
     font-family:"Noto Sans KR", sans-serif;
@@ -432,8 +433,8 @@ section{position:relative; background:#F8F8F8;}
 }
 .slider .slides .slide img{position:absolute; left:30px; width:516px;}
 //웹사이트 정보(기간,개발범위)
-.slider .slides .slide .durationPage{position:absolute; top:380px;}
-.slider .slides .slide .durationPage li{display:flex; font-size:20px; line-height:35px;}
+.slider .slides .slide .durationPage{}
+.slider .slides .slide .durationPage li{display:flex; font-size:20px;}
 .slider .slides .slide .durationPage li p:first-child{width:100px;}
 .slider .slides .slide .durationPage li p:nth-child(2){width:200px;}
 

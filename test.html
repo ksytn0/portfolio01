@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김시연 포트폴리오</title>
+    <title>테스트 포트폴리오</title>
 
     <!--초기화-->
     <link href="./css/reset.css" rel="stylesheet" type="text/css">
@@ -30,13 +30,55 @@
     <!--네비게이션(.gnb) 버튼-->
     <script src="./script/gnb.js"></script>
     <!--스킬바(.skillBar) 무빙-->
-    <script src="./script/progressBar.js"></script>
-    <!--프로젝트 타이틀-->
-    <script src="./script/projectH2.js"></script>
-    <!--학습목록 아이콘(.folderGroup div:nth(2)) 무빙-->
-    <script src="./script/studyList.js"></script>
-    <!--프로젝트 슬라이드-->
-    <script src="./script/projectSlide.js"></script>
+
+    <style>
+    header{
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0; z-index: 9999;
+    padding: 50px 50px;
+    background-color: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    transition: padding 0.3s;
+    }
+    .gnb{
+        position:absolute; right:160px;
+        width:640px;
+    }
+    .gnb ul{
+        display:flex;
+        justify-content:space-between;
+    }
+    .gnb ul li a{
+        font-family:"Alegreya Sans SC", sans-serif;
+        font-size:24px;
+        font-weight:500;
+        text-decoration: none;
+        color:#BDBDC3;
+        transition:0.4s;
+    }
+    .active{font-weight: 700 !important; color:#464646 !important; transition:0.4s;}
+    .gnb ul li:hover a{color:#4E4FEB;}
+    .gnb ul li a.active::after {width: 100%;}
+    .gnb ul li:hover a::after{width:100%;}
+    .gnb ul li a::after {
+        display:block;
+        content: '';
+        width:0px; height:3px;
+        margin-top:3px;
+        background-color:#4E4FEB;
+        transition:0.4s;
+    }
+
+    .pg_project h2{
+    position:fixed; top:120px; left:160px;
+    font-family: "Inter", sans-serif;
+    font-size:30px;
+    text-transform:uppercase;
+    color:#4E4FEB;
+}
+
+    </style>
 </head>
 <body>
     <header>
@@ -128,7 +170,7 @@
                         <p>#infj #활기찬 #꼼꼼한 #체계적인</p>
                     </li>
                 </ul>
-                <div class="buttonBefore"><a href="./submit_kimsiyeon.pdf" title="이력서 바로가기">이력서 바로가기</a></div>
+                <div class="buttonBefore"><a href="#" title="이력서 바로가기">이력서 바로가기</a></div>
             </div>
             <!--license-->
             <div class="license">
@@ -255,8 +297,6 @@
             </div>
         </section>
 
-
-<!--**********************************************************************-->
         <!--프로젝트(가로이동 페이지)-->
         <section class="pg_project">
             <div class="pg tpg"><!--타겟페이지(스크롤식 가로이동)-->
@@ -264,45 +304,60 @@
                 <div class="slidePg"><!--옆으로 흘러갈 박스-->
                     <div class="scroll_bg">
                         <ul>
-                            <li class="webRedesign">
-                                <div class="slider" id="web_slide">
-                                    <h3>web redesign</h3>
-                                    <div class="slides">
-                                        <div class="slide web1">
-                                            <h4>원오세븐</h4>
-                                            <img src="./images/Mockup1.png" alt="목업이미지">
-                                            <ul class="durationPage">
-                                                <li>
-                                                    <p>제작기간</p>
-                                                    <p>10일</p>
-                                                </li>
-                                                <li>
-                                                    <p>제작범위</p>
-                                                    <p>메인페이지</p>
-                                                </li>
-                                            </ul>
-                                            <!-- <div class="webInformation">
-                                                <p>원오세븐 공식 홈페이지를 반응형 페이지로 코딩하였습니다. 잘 알려지지 못했던 원오세븐 브랜드에 대하여 잘 알 수 있게끔 내비게이션과 메인페이지를 구성하였습니다.
-                                                </p><br>
-                                                <p>#반응형 #html #css #jquery</p>
-                                            </div>
-                                            <div class="buttonGoup">
-                                                <div class="buttonBefore"><a href="#" title="프로토타입">프로토타입</a></div>
-                                                <div class="buttonBefore"><a href="#" title="기획">기획</a></div>
-                                                <div class="buttonBefore"><a href="#" title="사이트보기">사이트보기</a></div>
-                                                <div class="buttonBefore"><a href="#" title="기존페이지">기존페이지</a></div>
-                                            </div> -->
-                                        </div>
-                                        <div class="slide web2"></div>
-                                        <div class="slide web3"></div>
-            
-                                    <div class="prev back"><img src="./images/btn_left.png" alt="이전페이지"></div>
-                                    <div class="prev front"><img src="./images/btn_right.png" alt="다음페이지"></div>
-                                    <div class="pagination">
-                                        <div class="dot"></div>
-                                        <div class="dot"></div>
-                                        <div class="dot"></div>
-                                    </div>
+                            <li>
+                                <img src="./images/Mockup.png" alt="">
+                                <div class="projectExplain">
+                                    <h3>프로젝트1</h3>
+                                    <p>원오세븐 공식 홈페이지를 반응형 페이지로 코딩하였습니다.
+                                        잘 알려지지 못했던 원오세븐 브랜드에 대하여 잘 알 수 있게끔 
+                                        내비게이션과 메인페이지를 구성하였습니다.</p>
+                                    <p>#반응형 #html #css #jquery</p>
+                                </div>
+                                <div class="buttonGoup">
+                                    <div class="buttonBefore"><a href="#" title="프로토타입">프로토타입</a></div>
+                                    <div class="buttonBefore"><a href="#" title="기획">기획</a></div>
+                                    <div class="buttonBefore"><a href="#" title="사이트보기">사이트보기</a></div>
+                                    <div class="buttonBefore"><a href="#" title="기존페이지">기존페이지</a></div>
+                                </div>
+                                <div class="projectInfo">
+                                    <ul>
+                                        <li>
+                                            <p>제작기간</p>
+                                            <p>10일</p>
+                                        </li>
+                                        <li>
+                                            <p>제작범위</p>
+                                            <p>메인페이지</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="./images/Mockup.png" alt="">
+                                <div class="projectExplain">
+                                    <h3>프로젝트1</h3>
+                                    <p>원오세븐 공식 홈페이지를 반응형 페이지로 코딩하였습니다.
+                                        잘 알려지지 못했던 원오세븐 브랜드에 대하여 잘 알 수 있게끔 
+                                        내비게이션과 메인페이지를 구성하였습니다.</p>
+                                    <p>#반응형 #html #css #jquery</p>
+                                </div>
+                                <div class="buttonGoup">
+                                    <div class="buttonBefore"><a href="#" title="프로토타입">프로토타입</a></div>
+                                    <div class="buttonBefore"><a href="#" title="기획">기획</a></div>
+                                    <div class="buttonBefore"><a href="#" title="사이트보기">사이트보기</a></div>
+                                    <div class="buttonBefore"><a href="#" title="기존페이지">기존페이지</a></div>
+                                </div>
+                                <div class="projectInfo">
+                                    <ul>
+                                        <li>
+                                            <p>제작기간</p>
+                                            <p>10일</p>
+                                        </li>
+                                        <li>
+                                            <p>제작범위</p>
+                                            <p>메인페이지</p>
+                                        </li>
+                                    </ul>
                                 </div>
                             </li>
                         </ul>
@@ -310,16 +365,13 @@
                 </div>
             </div>
         </section>
-<!--**********************************************************************-->
-        <!--디자인(세로이동 페이지)-->
-        <!-- <section class="pg pg_design"></section> -->
 
         <!--학습목록(세로이동 페이지)-->
         <section class="pg pg_learn">
             <h2>LEARN</h2>
             <ul>
                 <li class="folderBox">
-                    <h3>HTML</h3>
+                    <h3>html</h3>
                     <a href="#" title="">
                     <img src="./images/backFolder_bl.png" alt="">
                     <img src="./images/iconn_html.png" alt="html이미지">
@@ -391,14 +443,14 @@
                     무대 위 베이스(bass) 연주처럼<br> 
                     팀원과의 협업에서 기본(base)이 탄탄한,<br>
                     웹사이트의 중심을 잡아줄 수 있는<br>
-                    마크업을 지향하고 꾸준히 노력합니다.</p>
+                    마크업을 지향하고 꾸준히 노력할 것입니다.</p>
             </div>
             <div class="contactMe">
                 <h3>contact me</h3>
                 <ul>
                     <li>
                         <p>phone</p>
-                        <p>010 - 4431 - ****</p>
+                        <p>010 - 4431 - 0577</p>
                     </li>
                     <li>
                         <p>e-mail</p>
@@ -408,29 +460,29 @@
             </div>
         </section>
     </main>
+    <script>
+        $(document).ready(function(){
 
-    <footer>
-        <p id="footer_info">해당 사이트는 개인 포트폴리오 목적으로 제작 되었으며 1920px 해상도에 최적화 되어 있습니다.<br>특정 기능(가로 스크롤)을 구현하기 위해 해상도별 지원이 되지 않는 점 양해 부탁드립니다.</p>
-    </footer>
+            /*** gnb메뉴 클리시 해당 위치로 이동***/
+            let gnb = $('.gnb ul li');
+            let i;
 
-<!--**********************************************************************-->
-    <!-- scroll값 표시 -->
-    <span id="scrollNum">
-        RESULT
-    </span>
+            gnb.click(function(){
+                i = $(this).index();
+                console.log(i);
 
-    <!--intro(top)로 이동 버튼-->
-    <span id="top_btn">
-        <img src="./images/topbtn.png" alt="top버튼">
-    </span>
+                // 클릭된 li의 형제 요소 중 a 태그의 active 클래스 제거
+                $(this).siblings().find('a').removeClass('active');
+                // 클릭된 li의 하위 a 태그의 after에 스타일 적용
+                $(this).children('a').addClass('active');
 
-    <!-- popup 알림창 -->
-    <!-- <div id="popup_bg">
-        <div id="popup">
-            <div id="popup_tit">해상도 지원 안내창</div>
-            <div id="popup_txt">해당 사이트는 개인 포트폴리오 목적으로 제작되었으며, <br><span>1920px 해상도에 최적화</span>되어 있습니다. <br>특정 기능(가로 스크롤)을 구현하기 위해, <br>해상도별 지원이 되지 않는 점을 알려드립니다.</div>
-            <span id="close">닫기</span>
-        </div>
-    </div> -->
+                //li클릭시 section의 top:0으로 이동
+                $('html, body').stop().animate({scrollTop:$('main section').eq(i).offset().top},1500, 'easeOutQuint');
+                return false; //새로고침 방지
+            });
+            });
+
+            
+    </script>
 </body>
 </html>

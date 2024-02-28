@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="웹퍼블리셔, 웹디자이너, 포트폴리오, 박소연">
+    <meta name="description" content="신입 웹퍼블리셔 박소연의 2023 포트폴리오입니다.">
+    <title>박소연 portfolio 2023</title>
+    <!--favicon -->
+    <link rel="shortcut icon" href="./images/idea.png" type="image/x-icon">
+    <link rel="icon" href="./images/idea.png" type="image/x-icon"> 
+    <!-- style -->
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/portfolio.css">
+    <link rel="stylesheet" href="./style/responsive.css">
+    <!-- slide -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <style>
+        /* main */
+        main {
+            background:#FFF9F0;
+        }
+
+        /* --------------------project web--------------------- */
+        main #project_web {}
+        main #project_web > .web {padding:100px 0;}
+        main #project_web > .landing {padding:100px 0; }
+
+        /* -------------------web slide ----------------------*/
+        /* title */
+        main #project_web .title {
+            max-width:1400px; margin:0 auto; height:185px;
+            display:flex; flex-flow:row nowrap; justify-content:space-between;
+        }
+        main #project_web .title h1 {
+            font-family:'Caveat Brush';  font-size:3.157rem; color:#92B4EC; letter-spacing:-0.02em;
+        }
+        main #project_web .title h2 {
+            display:flex; flex-flow:column nowrap;
+            text-align:right;
+            margin-bottom:75px; 
+        }
+        main #project_web .title h2 .num {
+            font-family:'Caveat Brush'; color:#92B4EC;
+            font-size:2.188rem; letter-spacing:-0.02em; 
+        }
+        main #project_web .title h2 .project_name {margin-bottom:20px; ; z-index:10; position:relative; } 
+        main #project_web .title h2 .project_name .bar {
+            position:absolute;
+            right:0; bottom:-5px;
+            display:block; width:150px; height:30px; border-radius:30px;
+            background:#FFE69A; 
+        }
+        main #project_web .title h2 .project_name img {
+            position:relative; top:20px; left:-20px; 
+        }
+        main #project_web .title h2 .project_name .name  {
+            position:relative; z-index:20; 
+            font-size:2.188rem; letter-spacing:-0.02em;}
+
+        /* bar */
+        main #project_web .web1 .title h2 .project_name .bar {width:100px; }
+        main #project_web .web2 .title h2 .project_name .bar {width:130px; }
+        main #project_web .web3 .title h2 .project_name .bar {width:235px;}
+        main #project_web .landing1 .title h2 .project_name .bar {width:235px;}
+        main #project_web .landing2 .title h2 .project_name .bar {width:320px;}
+        /* web_slide */
+        #web_slide .swiper-wrapper .swiper-slide .slide_bg {
+            margin-top:-50px;
+            padding:80px 0 100px;}
+        #web_slide .swiper-wrapper .swiper-slide .slide_bg .info_bg {
+            background:#fff;
+            width:100%; height:400px;
+            border-top:15px solid #FFE69A; border-bottom:15px solid #FFE69A;
+            display:flex; flex-flow:row nowrap; align-items:center; justify-content:center;
+        }
+        #web_slide .swiper-wrapper .swiper-slide .slide_bg .info_bg .web_img {width:700px; height:500px; margin-right:80px;}
+        #web_slide .swiper-wrapper .swiper-slide .slide_bg .info_bg .web_img img {width:100%;}
+        #web_slide .swiper-wrapper .swiper-slide .slide_bg .info_bg .info {margin-left:0;}
+        #web_slide .swiper-wrapper .swiper-slide .slide_bg .info_bg .info .project_desc dl {display:flex; flex-flow:row nowrap; margin-bottom:15px; }
+        #web_slide .swiper-wrapper .swiper-slide .slide_bg .info_bg .info .project_desc dl dt {font-weight:700; width:100px; font-size:1.25rem; letter-spacing:-0.02em; line-height:30px;}
+        #web_slide .swiper-wrapper .swiper-slide .slide_bg .info_bg .info .project_desc dl dd {font-size:1.25rem; letter-spacing:-0.02em; line-height:30px;}
+        #web_slide .swiper-wrapper .swiper-slide .slide_bg .info_bg .info .ex {
+            font-size:1.25rem; letter-spacing:-0.02em; line-height:30px;
+            width:550px;
+            margin-bottom:25px;
+        }
+        #web_slide .swiper-wrapper .swiper-slide .slide_bg .info_bg .info .link {
+            width:600px;
+            display:flex; flex-flow:row nowrap; justify-content:center;
+        }
+        #web_slide .swiper-wrapper .swiper-slide .slide_bg .info_bg .info .link a {
+            display:block; padding:10px 30px; background:#FFD24C;
+            color:#fff;  border-radius:20px; font-size:1.25rem;
+            margin-right:10px;
+            transition:all 0.3s;
+        }
+        #web_slide .swiper-wrapper .swiper-slide .slide_bg .info_bg .info .link a:hover {background:#92B4EC;}
+        #web_slide .swiper-button-prev {
+            width:100px; height:100px; transition:all 0.2s linear;
+            background:url(../images/slide_prev_big.png) no-repeat; background-size:cover; margin-top:20px; margin-left:40px;}
+        #web_slide .swiper-button-next {
+            width:100px; height:100px; transition:all 0.2s linear;
+            animation:next 1.5s linear alternate infinite;
+            background:url(../images/slide_next_big.png) no-repeat; background-size:cover; margin-top:20px; margin-right:40px;}
+        #web_slide .swiper-button-prev:hover {background:url(../images/slide_prev_hover.png) no-repeat;}
+        #web_slide .swiper-button-next:hover {background:url(../images/slide_next_hover.png) no-repeat;}
+        #web_slide .swiper-button-prev::after {display:none;}
+        #web_slide .swiper-button-next::after {display:none;}
+        .swiper .swiper-pagination-bullet {background-color: #FFD24C;}
+    </style>
+</head>
+<body>
+    <main>
+        <section id="project_web">
+            <div class="web">
+                <div class="contents">
+                    <div class="swiper" id="web_slide">
+                        <div class="swiper-wrapper">
+
+                            <!-- Slides -->
+                            <div class="swiper-slide web1">
+                                <div class="title">
+                                    <h1>Web Redesign</h1>
+                                    <h2>
+                                        <span class="num">project #1</span>
+                                        <span class="project_name">
+                                            <img src="./images/web_icon_pfizer.png" alt="">
+                                            <span class="name">화이자</span>
+                                            <span class="bar"></span>
+                                        </span>
+                                        <span class="desc">바이오 제약 회사</span>
+                                    </h2>
+                                </div>
+                                <div class="slide_bg">
+                                    <div class="info_bg">
+                                        <p class="web_img"><img src="./images/web_02_pfizer.png" alt=""></p><!-- 웹사이트이미지 -->
+                                        <div class="info">
+                                            <div class="project_desc">
+                                                <dl><dt>사이트명</dt><dd>화이자</dd></dl>
+                                                <dl><dt>제작기간</dt><dd>5일 (개인 100% 작업)</dd></dl>
+                                                <dl><dt>PAGE</dt><dd>반응형 Main + sub*3<br>(회사 소개, 연구 개발, 제품 정보)</dd></dl>
+                                                <dl><dt>TOOL</dt><dd>photoshop, illustrator, figma, HTML, CSS, JavaScript</dd></dl>
+                                            </div>
+                                            <p class="ex">
+                                                메인페이지를 카테고리별로 분류하여 사용자들이 
+                                                정보를 쉽게 얻을 수 있도록 리디자인하였습니다.
+                                            </p>
+                                            <div class="link">
+                                                <a href="https://www.figma.com/file/HX4gsAAO3qDNWjdit24Ued/%ED%99%94%EC%9D%B4%EC%9E%90-Before?type=design&node-id=0%3A1&mode=design&t=LnbDK2hikxTim18c-1" target="_blank">Before</a>
+                                                <a href="https://www.figma.com/proto/lbBvqatkxvz35LnzMyeSrZ/2023-%ED%99%94%EC%9D%B4%EC%9E%90-%EA%B8%B0%ED%9A%8D%EC%84%9C?page-id=0%3A1&type=design&node-id=15-219&viewport=660%2C128%2C0.03&t=AdGv8unTOexvy1mj-1&scaling=scale-down-width&mode=design" target="_blank">기획서</a>
+                                                <a href="https://www.figma.com/file/4xILwlSWPPZBtCYkpxbHQ7/2023-%ED%99%94%EC%9D%B4%EC%9E%90-%EB%A6%AC%EB%94%94%EC%9E%90%EC%9D%B8?type=design&node-id=0%3A1&mode=design&t=0saTeoLCCevBFpgl-1" target="_blank">Figma</a>
+                                                <a href="http://sysy0313.pe.kr/web_pfizer/" target="_blank">최종 결과 사이트</a>
+                                            </div>
+                                        </div><!-- info end -->
+                                    </div><!-- info_bg end -->
+                                </div><!-- slide end -->
+                            </div><!-- slide 1 end -->
+
+                            <div class="swiper-slide web2">
+                                <div class="title">
+                                    <h1>Web Redesign</h1>
+                                    <h2>
+                                        <span class="num">project #2</span>
+                                        <span class="project_name">
+                                            <img src="./images/web_icon_waffle.png" alt="">
+                                            <span class="name">와플대학</span>
+                                            <span class="bar"></span>
+                                        </span>
+                                        <span class="desc">카페 / 디저트</span>
+                                    </h2>
+                                </div>
+                                <div class="slide_bg">
+                                    <div class="info_bg">
+                                        <p class="web_img"><img src="./images/web_01_waffleuniv.png" alt=""></p><!-- 웹사이트이미지 -->
+                                        <div class="info">
+                                            <div class="project_desc">
+                                                <dl><dt>사이트명</dt><dd>와플대학</dd></dl>
+                                                <dl><dt>제작기간</dt><dd>5일 (개인 100% 작업)</dd></dl>
+                                                <dl><dt>PAGE</dt><dd>반응형 Main + sub*4<br>(브랜드스토리/메뉴 소개/메뉴 상세/전국캠퍼스현황)</dd></dl>
+                                                <dl><dt>TOOL</dt><dd>photoshop, figma, HTML, CSS, JavaScript</dd></dl>
+                                            </div>
+                                            <p class="ex">
+                                                미디어쿼리를 사용하여 PC,  Tablet, Mobile 환경을 고려
+                                                하였고, 사이트의 메뉴를 편리하게 볼 수 있도록 리디자인하였습니다.
+                                            </p>
+                                            <div class="link">
+                                                <a href="https://www.figma.com/file/DoN76E8GzYkSGL45DSfZr1/%EC%99%80%ED%94%8C%EB%8C%80%ED%95%99-Before?type=design&node-id=0%3A1&mode=design&t=uM5TY8clgBKCwySb-1" target="_blank">Before</a>
+                                                <a href="https://www.figma.com/proto/mtaEIsyqJY0jOdSd3j4V6a/2023-%EC%99%80%ED%94%8C%EB%8C%80%ED%95%99-%EA%B8%B0%ED%9A%8D%EC%84%9C?page-id=0%3A1&type=design&node-id=15-100&viewport=-91%2C575%2C0.14&t=Fkv9ZkToGVQwqc5K-1&scaling=scale-down-width&mode=design" target="_blank">기획서</a>
+                                                <a href="https://www.figma.com/file/zzIbvBELx4wTXhs89UIxI0/SS2023-%EC%99%80%ED%94%8C%EB%8C%80%ED%95%99-%EB%A6%AC%EB%94%94%EC%9E%90%EC%9D%B8?type=design&node-id=0%3A1&mode=design&t=eMFZ94u96tr0jN4A-1" target="_blank">Figma</a>
+                                                <a href="http://sysy0313.pe.kr/web_waffle_univ/" target="_blank">최종 결과 사이트</a>
+                                            </div>
+                                        </div><!-- info end -->
+                                    </div><!-- info bg end -->
+                                </div><!-- slide_bg end -->
+                            </div><!-- slide 2 end -->
+
+                            <div class="swiper-slide web3">
+                                <div class="title">
+                                    <h1>Web Redesign</h1>
+                                    <h2>
+                                        <span class="num">project #3</span>
+                                        <span class="project_name">
+                                            <img src="./images/web_icon_jaeneung.png" alt="">
+                                            <span class="name">재능교육 스스로</span>
+                                            <span class="bar"></span>
+                                        </span>
+                                        <span class="desc">아동 교육 전문 기업</span>
+                                    </h2>
+                                </div>
+                                <div class="slide_bg">
+                                    <div class="info_bg">
+                                        <p class="web_img"><img src="./images/web_03_jaenueng.png" alt=""></p><!-- 웹사이트이미지 -->
+                                        <div class="info">
+                                            <div class="project_desc">
+                                                <dl><dt>사이트명</dt><dd>재능교육 스스로</dd></dl>
+                                                <dl><dt>제작기간</dt><dd>5일 (개인 100% 작업)</dd></dl>
+                                                <dl><dt>PAGE</dt><dd>반응형 Main + sub*3<br>(상담신청, 스스로 이야기, 스스로 교육과정)</dd></dl>
+                                                <dl><dt>TOOL</dt><dd>photoshop, illustrator, figma, HTML, CSS, JavaScript</dd></dl>
+                                            </div>
+                                            <p class="ex">
+                                                메인페이지를 사용자인 학부모들에게 정보를 제공하면서
+                                                밝은 이미지를 주는 느낌으로 리디자인하였습니다.
+                                            </p>
+                                            <div class="link">
+                                                <a href="https://www.figma.com/file/xfHDEXBz1P5gCpkbNll4J6/%EC%9E%AC%EB%8A%A5%EA%B5%90%EC%9C%A1-Before?type=design&node-id=0%3A1&mode=design&t=bsP6F8wHDsqmEqDe-1" target="_blank">Before</a>
+                                                <a href="https://www.figma.com/proto/smhWf5XIheizodt2DjCDZQ/%EC%9E%AC%EB%8A%A5%EA%B5%90%EC%9C%A1-%EA%B2%B0%EA%B3%BC%EA%B8%B0%ED%9A%8D%EC%84%9C?page-id=0%3A1&type=design&node-id=19-336&viewport=805%2C374%2C0.06&t=k8Ebl0X1y4SY2OKt-1&scaling=scale-down-width&mode=design" target="_blank">기획서</a>
+                                                <a href="https://www.figma.com/file/lKaaoxNobfiMH4vMHsEfWP/2023-%EC%9E%AC%EB%8A%A5%EA%B5%90%EC%9C%A1-%EB%A6%AC%EB%94%94%EC%9E%90%EC%9D%B8?type=design&node-id=0%3A1&mode=design&t=iLb6SPdJtYNh3RXP-1" target="_blank">Figma</a>
+                                                <a href="http://sysy0313.pe.kr/web_jaeneung/" target="_blank">최종 결과 사이트</a>
+                                            </div>
+                                        </div><!-- info end -->
+                                    </div><!-- info_bg end -->
+                                </div><!-- slide end -->
+                            </div><!-- slide 3 end -->
+                        </div>
+
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div><!-- slide end -->
+                </div><!-- div_contents -->
+            </div><!-- web end -->
+        </section><!-- project_web end -->
+    </main>
+    <script>
+        // 슬라이드
+        const web_slide = new Swiper('#web_slide', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            // If we need pagination
+            pagination: {
+                el: '#web_slide .swiper-pagination',
+                clickable: true,
+            },
+            // Navigation arrows
+            navigation: {
+                nextEl: '#web_slide .swiper-button-next',
+                prevEl: '#web_slide .swiper-button-prev',
+            },
+        });
+    </script>>
+</body>
+</html>
